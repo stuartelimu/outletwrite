@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Content, Section, Container } from "react-bulma-components";
+import axios from 'axios';
 
-const Post = () => {
+const Post = ({match}) => {
+
+  const [article, setArticle] = useState({});
+
+  useEffect(() => {
+    const id = match.params.articleID;
+    axios.get(`http://127.0.0.1:8000/api/articles/${id}/`)
+      .then(res => setArticle(res.data))
+  })
+
   return (
     <Section>
       <Container>
         <Content>
-          <h1>Hello World</h1>
+          <h1>{article.title}</h1>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
             accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus,

@@ -3,7 +3,6 @@ import { Box, Image, Media, Content, Container } from "react-bulma-components";
 import logo from "./logo.svg";
 import axios from "axios";
 
-import { NavLink } from "react-router-dom";
 
 const Posts = () => {
   const [data, setData] = useState([]);
@@ -17,9 +16,9 @@ const Posts = () => {
   return (
     <>
       {data.map(article => (
-        <Container style={{ marginTop: "40px" }}>
+        <Container key={article.id} style={{ marginTop: "40px" }}>
           <Box
-            key={article.id}
+            
             responsive={{
               mobile: {
                 display: {
@@ -60,9 +59,9 @@ const Posts = () => {
               <Media.Item>
                 <Content>
                   <p>
-                    <NavLink to="/post">
+                    <a href={`/${article.id}`}>
                       <strong>{article.title}</strong>
-                    </NavLink> {" "}
+                    </a> {" "}
                     <small>@johnsmith</small>{" "}
                     <small>{article.created_at}</small>
                     <br />

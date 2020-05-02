@@ -22,7 +22,7 @@ const Navigationbar = () => {
             />
           </NavLink>
           <Navbar.Burger
-            active={isactive}
+            
             onClick={() => setActive(prevActive => !prevActive)}
           />
         </Navbar.Brand>

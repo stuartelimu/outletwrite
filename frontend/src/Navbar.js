@@ -28,8 +28,8 @@ const Navigationbar = () => {
         </Navbar.Brand>
         <Navbar.Menu>
           <Navbar.Container>
-            <NavLink className="navbar-item" to="/blog">Blog</NavLink>
-            <NavLink className="navbar-item" to="/about">About</NavLink>
+            <NavLink className="navbar-item" activeClassName="is-active" to="/blog">Blog</NavLink>
+            <NavLink className="navbar-item" activeClassName="is-active" to="/about">About</NavLink>
           </Navbar.Container>
           <Navbar.Container position="end">
             <Navbar.Item href="#">🌓</Navbar.Item>

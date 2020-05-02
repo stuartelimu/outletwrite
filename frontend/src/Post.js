@@ -1,8 +1,6 @@
 import React from "react";
 import { Content, Section, Container } from "react-bulma-components";
 
-
-
 const Post = () => {
   return (
     <Section>

@@ -6,6 +6,8 @@ import { Route, HashRouter } from "react-router-dom";
 import Navigationbar from "./Navbar";
 import Home from "./Home";
 import Posts from "./Posts";
+import Post from "./Post";
+
 
 import { Hero } from "react-bulma-components";
 
@@ -19,6 +21,7 @@ function App() {
 
         <Route exact path="/" component={Home} />
         <Route path="/blog" component={Posts} />
+        <Route path="/post" component={Post} />
 
         <Hero.Footer>
           <footer></footer>

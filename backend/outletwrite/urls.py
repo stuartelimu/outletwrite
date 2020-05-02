@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from blog.views import ArticleList, ArticleDetail
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/articles/', ArticleList.as_view(), name='article_list'),
+    path('api/articles/<int:pk>/', ArticleDetail.as_view(), name='article_detail'),
+
+
 ]

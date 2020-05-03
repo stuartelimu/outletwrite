@@ -2,15 +2,15 @@ import React, { useState, useEffect } from "react";
 import { Content, Section, Container } from "react-bulma-components";
 import axios from 'axios';
 
-const Post = ({match}) => {
+const Post = (props) => {
 
   const [article, setArticle] = useState({});
 
   useEffect(() => {
-    const id = match.params.articleID;
+    const id = props.match.params.articleID;
     axios.get(`http://127.0.0.1:8000/api/articles/${id}/`)
       .then(res => setArticle(res.data))
-  })
+  }, [])
 
   return (
     <Section>

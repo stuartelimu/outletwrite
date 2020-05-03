@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 
-import { Route, BrowserRouter } from "react-router-dom";
+import { Route, BrowserRouter, Switch } from "react-router-dom";
 
 import Navigationbar from "./Navbar";
 import Home from "./Home";
@@ -19,10 +19,11 @@ function App() {
           <Navigationbar />
         </Hero.Head>
 
+        <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/blog" component={Posts} />
         <Route exact path="/:articleID" component={Post} />
-
+        </Switch>
         <Hero.Footer>
           <footer></footer>
         </Hero.Footer>

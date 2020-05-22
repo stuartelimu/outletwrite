@@ -1,2 +1,2 @@
 # outletwrite
-A blog app
+A blog app made with django and react
